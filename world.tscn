@@ -3354,3 +3354,8 @@ position = Vector2(537, 527)
 [node name="Icon" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("3_aqk2v")
 script = ExtResource("4_036b0")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Icon"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Icon/Area2D"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
