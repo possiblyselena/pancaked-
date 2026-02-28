@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://xup0la22hdbk"]
 
-[ext_resource type="PackedScene" uid="uid://b0qira1qcct01" path="res://node_2d.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://c6vegahrsftfg" path="res://images/dotsofcolour.png" id="2_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://dobr0s52cxojk" path="res://itemspawner.tscn" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://byrmwqaa3mofm" path="res://pancakes.tscn" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://bn0tmxcqab2xg" path="res://icon.svg" id="3_aqk2v"]
+[ext_resource type="Script" uid="uid://cje1rt4y7p8hu" path="res://spawnapples.gd" id="3_tlwt5"]
+[ext_resource type="Script" uid="uid://bfrhwssdjcenw" path="res://bear.gd" id="4_036b0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("2_fj7yv")
@@ -3339,13 +3339,18 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 
 [node name="World" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_f3sb7")]
-position = Vector2(479, -43)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAACcAAAADAB4AAAABACcAAAADAB4AAAACACcAAAADAB4AAAADACcAAAADAB4AAAAEACcAAAADAB4AAAAFACcAAAADAB4AAAAGACcAAAADAB4AAAAHACcAAAADAB4AAAAIACcAAAADAB4AAAAJACcAAAADAB4AAAAKACcAAAADAB4AAAALACcAAAADAB4AAAAMACcAAAADAB4AAAANACcAAAADAB4AAAAOACcAAAADAB4AAAAPACcAAAADAB4AAAAQACcAAAADAB4AAAARACcAAAADAB4AAAASACcAAAADAB4AAAATACcAAAADAB4AAAAUACcAAAADAB4AAAAVACcAAAADAB4AAAAWACcAAAADAB4AAAAXACcAAAADAB4AAAAYACcAAAADAB4AAAAZACcAAAADAB4AAAAaACcAAAADAB4AAAAbACcAAAADAB4AAAAcACcAAAADAB4AAAAdACcAAAADAB4AAAAeACcAAAADAB4AAAAfACcAAAADAB4AAAAgACcAAAADAB4AAAAhACcAAAADAB4AAAAiACcAAAADAB4AAAAjACcAAAADAB4AAAAkACcAAAADAB4AAAAlACcAAAADAB4AAAAmACcAAAADAB4AAAAnACcAAAADAB4AAAAoACcAAAADAB4AAAApACcAAAADAB4AAAAqACcAAAADAB4AAAArACcAAAADAB4AAAAsACcAAAADAB4AAAAtACcAAAADAB4AAAAuACcAAAADAB4AAAAvACcAAAADAB4AAAAwACcAAAADAB4AAAAxACcAAAADAB4AAAAyACcAAAADAB4AAAAzACcAAAADAB4AAAA0ACcAAAADAB4AAAA1ACcAAAADAB4AAAA2ACcAAAADAB4AAAA3ACcAAAADAB4AAAA4ACcAAAADAB4AAAA5ACcAAAADAB4AAAA6ACcAAAADAB4AAAA7ACcAAAADAB4AAAA8ACcAAAADAB4AAAA9ACcAAAADAB4AAAA+ACcAAAADAB4AAAA/ACcAAAADAB4AAABAACcAAAADAB4AAABBACcAAAADAB4AAABCACcAAAADAB4AAABDACcAAAADAB4AAABEACcAAAADAB4AAABFACcAAAADAB4AAABGACcAAAADAB4AAABHACcAAAADAB4AAABIACcAAAADAB4AAABHADIAAAADAB4AAAA=")
 tile_set = SubResource("TileSet_aqk2v")
 
-[node name="itemspawner" parent="." instance=ExtResource("3_tlwt5")]
+[node name="apples" type="Node2D" parent="."]
+script = ExtResource("3_tlwt5")
 
-[node name="pancakes" parent="itemspawner" instance=ExtResource("4_aqk2v")]
+[node name="Timer" type="Timer" parent="apples"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(537, 527)
+
+[node name="Icon" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("3_aqk2v")
+script = ExtResource("4_036b0")

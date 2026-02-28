@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var speed = 200
+var speed = 500
 
 var motion = Vector2.ZERO
 
-func _physics_process(delta):
+func _physicsprocess(delta):
 	motion = move_and_collide(Vector2(0, speed * delta))
 	
 	if Input.is_action_pressed("left"):
