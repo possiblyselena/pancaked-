@@ -1,5 +1,16 @@
-[gd_scene format=3 uid="uid://dkhnodi2bgmp1"]
+[gd_scene load_steps=2 format=3 uid="uid://dkhnodi2bgmp1"]
+
+[ext_resource type="Texture2D" uid="uid://c6vegahrsftfg" path="res://images/dotsofcolour.png" id="1_7h0kd"]
 
 [node name="Tiles" type="Node2D"]
+position = Vector2(10, 2)
 
 [node name="floor" type="Sprite2D" parent="."]
+position = Vector2(423, 175)
+scale = Vector2(32, 12)
+texture = ExtResource("1_7h0kd")
+region_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D"]

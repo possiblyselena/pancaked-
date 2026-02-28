@@ -9,8 +9,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("left"):
 		motion = move_and_collide(Vector2(-speed * delta, 0))
-		$Sprite.flip_h = true
 	if Input.is_action_pressed("right"):
 		motion = move_and_collide(Vector2(speed * delta, 0))
-		$Sprite.flip_h = false
 	
