@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0qira1qcct01"]
+
+[ext_resource type="Script" uid="uid://b5041nqcov0xc" path="res://penguin.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bn0tmxcqab2xg" path="res://icon.svg" id="2_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(123, 124)
+
+[node name="player" type="Node2D"]
+
+[node name="penguin" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="penguin"]
+position = Vector2(97, 564)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="penguin"]
+position = Vector2(97.5, 564)
+shape = SubResource("RectangleShape2D_0hol4")

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dkhnodi2bgmp1"]
+
+[node name="Tiles" type="Node2D"]
+
+[node name="floor" type="Sprite2D" parent="."]
